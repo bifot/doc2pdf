@@ -1,6 +1,6 @@
 {
   "name": "doc2pdf",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert DOC to PDF.",
   "main": "src/index.js",
   "scripts": {

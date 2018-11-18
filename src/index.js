@@ -27,5 +27,9 @@ module.exports = async (doc) => {
     await unlink(input);
   }
 
-  return readFile(output);
+  const buffer = await readFile(output);
+
+  await unlink(output);
+
+  return buffer;
 };
