@@ -14,12 +14,11 @@ module.exports = async (doc) => {
   };
 
   const isBuffer = doc instanceof Buffer;
-  const folder = getPath('docx');
-  const input = isBuffer ? folder : doc;
-  const output = isBuffer ? getPath('pdf') : input.replace(path.extname(doc), '.pdf');
+  const input = isBuffer ? getPath('docx') : doc;
+  const output = input.replace(path.extname(input), '.pdf');
 
   if (isBuffer) {
-    await writeFile(folder, input);
+    await writeFile(input, input);
   }
 
   await exec(`doc2pdf ${input}`);
