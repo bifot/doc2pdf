@@ -18,7 +18,7 @@ module.exports = async (doc) => {
   const output = input.replace(path.extname(input), '.pdf');
 
   if (isBuffer) {
-    await writeFile(input, input);
+    await writeFile(input, doc);
   }
 
   await exec(`doc2pdf ${input}`);
